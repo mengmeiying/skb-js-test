@@ -1,14 +1,12 @@
-import cardsData from '../../../../public/projects.json';
-
-
+const cardsDataUrl = '../../../../public/projects.json';
+const response = await fetch(cardsDataUrl);
+const cardsData = await response.json();
 
 const templateEl = document.querySelector('[data-template="project-card"]');
 const parentEl = document.querySelector('[data-project="parent"]');
 
 if (templateEl) {
-  parentEl.classList.add('is-active')
-
-
+  parentEl.classList.add('is-active');
 
   cardsData.forEach((cardData) => {
     let cardEl;
